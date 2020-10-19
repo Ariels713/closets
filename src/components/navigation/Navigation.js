@@ -63,12 +63,12 @@ function WhiteNavbar() {
             <Nav className="ml-auto" navbar>
               <NavItem className="active">
                 <NavLink tag={Link} to="/interiors">
-                  Closet Organizers <span className="sr-only">(current)</span>
+                  Organizers <span className="sr-only">(current)</span>
                 </NavLink>
               </NavItem>
               <NavItem className="active">
                 <NavLink tag={Link} to="/production">
-                  Closet Doors <span className="sr-only">(current)</span>
+                  Doors <span className="sr-only">(current)</span>
                 </NavLink>
               </NavItem>
               <NavItem className="active">
@@ -76,11 +76,11 @@ function WhiteNavbar() {
                   Room Dividers <span className="sr-only">(current)</span>
                 </NavLink>
               </NavItem>
-              <NavItem className="active">
+              {/* <NavItem className="active">
                 <NavLink tag={Link} to="/blawg">
                   About Us <span className="sr-only">(current)</span>
                 </NavLink>
-              </NavItem>
+              </NavItem> */}
               <NavItem>
                 {/* <Button tag={Link} to="/signup" color="#fff">
                   Contact

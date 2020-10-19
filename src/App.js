@@ -5,6 +5,10 @@ import { Nav } from "reactstrap";
 import Navigation from "./components/navigation/Navigation";
 import MainHeader from "./components/header/MainHeader";
 import MainSectionContent from "./components/mainContent/MainSectionContent";
+import LocationMap from "./components/map/LocationMap";
+import ClosetDoors from "./components/closets/ClosetDoors";
+import SampleProduct from "./components/productPage/SampleProduct";
+import Footer from "./components/footer/Footer";
 function App() {
   return (
     <>
@@ -15,6 +19,10 @@ function App() {
           <MainSectionContent />
         </Route>
       </Switch>
+      <ClosetDoors />
+      <SampleProduct />
+      <LocationMap />
+      <Footer />
     </>
   );
 }
