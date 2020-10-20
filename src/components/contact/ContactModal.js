@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 // reactstrap components
 import { Button, FormGroup, Input, Modal, Form, Label } from "reactstrap";
+import Select from "react-select";
+import makeAnimated from "react-select/animated";
 
 function ContactModal() {
   const [loginModal, setLoginModal] = useState(false);
@@ -9,7 +11,10 @@ function ContactModal() {
   const [message, setMessage] = useState("");
   const [sentMessage, setSentMessage] = useState(false);
   const [phone, setPhone] = useState("");
-
+  const interest = [
+    { value: "doors", label: "Closet Doors", color: "#253858" },
+    { value: "interiors", label: "Interiors", color: "#666666" },
+  ];
   const resetForm = () => {
     setName("");
     setEmail("");
@@ -37,7 +42,7 @@ function ContactModal() {
     //   console.error(err);
     // }
   };
-
+  const animatedComponents = makeAnimated();
   return (
     <>
       <Button
@@ -94,12 +99,22 @@ function ContactModal() {
                 />
               </FormGroup>
               <FormGroup>
-                <label>Email</label>
+                <label>Phone Number</label>
                 <Input
                   placeholder="Phone Number"
                   name="email"
                   value={phone}
                   onChange={(e) => setEmail(e.target.value)}
+                />
+              </FormGroup>
+              <FormGroup>
+                <label>Interested In </label>
+                <Select
+                  closeMenuOnSelect={false}
+                  components={animatedComponents}
+                  isMulti
+                  options={interest}
+                  className="mb-3"
                 />
               </FormGroup>
               <FormGroup>
@@ -111,18 +126,6 @@ function ContactModal() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                 />
-              </FormGroup>
-              <FormGroup check>
-                <Label check>
-                  <Input defaultValue="" type="checkbox"></Input>
-                  Closet Doors <span className="form-check-sign"></span>
-                </Label>
-              </FormGroup>{" "}
-              <FormGroup check>
-                <Label check>
-                  <Input defaultValue="" type="checkbox"></Input>
-                  Closet Interiors <span className="form-check-sign"></span>
-                </Label>
               </FormGroup>
               <Button block color="danger">
                 Submit
